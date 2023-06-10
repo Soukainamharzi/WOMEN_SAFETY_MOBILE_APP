@@ -13,7 +13,7 @@ export class SignupComponent {
 
   onSubmit() {
     // Envoyer les données de l'utilisateur à la base de données
-    this.http.post('URL_API_SIGNUP', this.user).subscribe({
+    this.http.post('http://localhost/signup.php', this.user).subscribe({
       next: (response) => {
         console.log('Utilisateur inscrit avec succès !', response);
         // Réinitialiser le formulaire après l'inscription réussie
