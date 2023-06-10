@@ -4,15 +4,20 @@ import { HttpClientModule } from '@angular/common/http'; // Ajout de l'import Ht
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { SignupComponent } from './signup/signup.component';
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule, // Ajout de HttpClientModule
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
