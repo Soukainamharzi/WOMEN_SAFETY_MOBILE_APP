@@ -1,4 +1,3 @@
-
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
@@ -20,16 +19,18 @@ export class AddContactComponent {
   constructor(private http: HttpClient, private router: Router) {}
 
   onSubmit() {
-    this.http.post('http://localhost/add-contact.php', this.contact).subscribe({
-      next: (response) => {
+    this.http.post('http://localhost/add-contact.php', this.contact).subscribe(
+      (response: any) => {
         console.log('Contact ajouté avec succès !', response);
-        this.router.navigate(['/emergency-contact']);
+        const contactId = response.contactId;
+        this.router.navigate(['/emergency-contact'], { queryParams: { id: contactId } });
       },
-      error: (error) => {
+      (error) => {
         console.error('Erreur lors de l\'ajout du contact :', error);
       }
-    });
+    );
   }
 }
+
 
 
