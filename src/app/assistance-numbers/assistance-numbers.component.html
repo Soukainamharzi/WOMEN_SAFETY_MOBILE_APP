@@ -1,0 +1,26 @@
+<div>
+  <button (click)="getAssistanceNumbers('maroc')">Maroc</button>
+  <button (click)="getAssistanceNumbers('espagne')">Espagne</button>
+  <button (click)="getAssistanceNumbers('france')">France</button>
+</div>
+
+<div>
+  <input
+    type="text"
+    [(ngModel)]="policeNumber"
+    placeholder="Numéro de police"
+  />
+  <input
+    type="text"
+    [(ngModel)]="ambulanceNumber"
+    placeholder="Numéro d'ambulance"
+  />
+  <input
+    type="text"
+    [(ngModel)]="fireNumber"
+    placeholder="Numéro de pompiers"
+  />
+</div>
+<div>
+  <button (click)="goBack()">Retour</button>
+</div>

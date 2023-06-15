@@ -1,0 +1,25 @@
+<h2>Liste des contacts d'urgence</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nom</th>
+      <th>Prénom</th>
+      <th>Téléphone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let contact of contacts">
+      <td>{{ contact.nom }}</td>
+      <td>{{ contact.prenom }}</td>
+      <td>{{ contact.telephone }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="buttons">
+  <button (click)="goBack()">Retour</button>
+  <button (click)="goToAddContact()">Ajouter</button>
+  <button (click)="goToUpdateContact()">Modifier</button>
+  <button (click)="deleteContact()">Supprimer</button>
+</div>

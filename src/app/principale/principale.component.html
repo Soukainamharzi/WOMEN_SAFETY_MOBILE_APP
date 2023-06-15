@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>Interface Principale</h1>
+  <div class="button-container">
+    <button (click)="navigateTo('emergency-contact')">Contact List</button>
+    <button (click)="navigateTo('camera')">Camera</button>
+    <button (click)="navigateTo('help')">Help</button>
+    <button (click)="navigateTo('assistance-numbers')">
+      Numero Assistance
+    </button>
+    <button class="sirene-button" (click)="playSiren()">Sirene</button>
+  </div>
+</div>
+
+<audio id="sirenSound">
+  <source src="/assets/police_siren.mp3" type="audio/mp3" />
+  <!-- Fournissez différentes sources audio (formats) pour une meilleure compatibilité -->
+</audio>

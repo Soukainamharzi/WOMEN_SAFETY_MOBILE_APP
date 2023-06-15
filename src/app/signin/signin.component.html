@@ -1,0 +1,19 @@
+<p>signin works!</p>
+<!-- signin.component.html -->
+
+<form (ngSubmit)="onSubmit()">
+  <div>
+    <label for="email">Email :</label>
+    <input type="email" id="email" name="email" [(ngModel)]="user.email" required>
+  </div>
+  <div>
+    <label for="motDePasse">Mot de passe :</label>
+    <input type="password" id="motDePasse" name="motDePasse" [(ngModel)]="user.motDePasse" required>
+  </div>
+  <div>
+    <button type="submit">Sign In</button>
+  </div>
+</form>
+<button (click)="goBack()">Retour</button>
+<div *ngIf="errorMessage" class="error-message">{{ errorMessage }}</div>
+
