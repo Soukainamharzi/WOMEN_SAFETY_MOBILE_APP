@@ -2,16 +2,29 @@
   <h1>Interface Principale</h1>
   <div class="button-container">
     <button (click)="navigateTo('emergency-contact')">Contact List</button>
-    <button (click)="navigateTo('camera')">Camera</button>
+    <button (click)="openCamera()">Camera</button>
+
+    <div class="video-container">
+      <video #videoElement autoplay></video>
+      <canvas #canvasElement></canvas>
+    </div>
+
+    <button
+      id="captureButton"
+      (click)="captureImage()"
+      *ngIf="capturedImage === null"
+    >
+      Capture
+    </button>
+    <div *ngIf="capturedImage">
+      <img [src]="capturedImage" alt="Captured Image" />
+    </div>
+
     <button (click)="navigateTo('help')">Help</button>
     <button (click)="navigateTo('assistance-numbers')">
       Numero Assistance
     </button>
     <button class="sirene-button" (click)="playSiren()">Sirene</button>
+    <audio id="sirenSound" src="assets/police_siren.mp3"></audio>
   </div>
 </div>
-
-<audio id="sirenSound">
-  <source src="/assets/police_siren.mp3" type="audio/mp3" />
-  <!-- Fournissez différentes sources audio (formats) pour une meilleure compatibilité -->
-</audio>

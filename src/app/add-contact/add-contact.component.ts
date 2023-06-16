@@ -7,7 +7,6 @@ interface Contact {
   prenom: string;
   telephone: string;
 }
-
 @Component({
   selector: 'app-add-contact',
   templateUrl: './add-contact.component.html',
@@ -19,18 +18,27 @@ export class AddContactComponent {
   constructor(private http: HttpClient, private router: Router) {}
 
   onSubmit() {
-    this.http.post('http://localhost/add-contact.php', this.contact).subscribe(
-      (response: any) => {
+    this.http.post<any>('http://localhost/add-contact.php', this.contact).subscribe({
+      next: (response) => {
         console.log('Contact ajouté avec succès !', response);
-        const contactId = response.contactId;
-        this.router.navigate(['/emergency-contact'], { queryParams: { id: contactId } });
+        this.getEmergencyContacts(); // Récupérer les contacts après l'ajout
+        this.router.navigate(['/emergency-contact']);
       },
-      (error) => {
+      error: (error) => {
         console.error('Erreur lors de l\'ajout du contact :', error);
       }
-    );
+    });
   }
+
+  getEmergencyContacts(): void {
+    this.http.get<Contact[]>('http://localhost/emergency-contact.php').subscribe({
+      next: (response) => {
+        console.log('Contacts récupérés avec succès !', response);
+      },
+      error: (error) => {
+        console.error('Erreur lors de la récupération des contacts d\'urgence :', error);
+      }
+    });
+  }
+
 }
-
-
-

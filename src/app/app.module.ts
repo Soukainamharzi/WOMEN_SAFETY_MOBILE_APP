@@ -12,6 +12,7 @@ import { PrincipaleComponent } from './principale/principale.component';
 import { AssistanceNumbersComponent } from './assistance-numbers/assistance-numbers.component';
 import { EmergencyContactComponent } from './emergency-contact/emergency-contact.component';
 import { AddContactComponent } from './add-contact/add-contact.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { AddContactComponent } from './add-contact/add-contact.component';
     PrincipaleComponent,
     AssistanceNumbersComponent,
     EmergencyContactComponent,
-    AddContactComponent
+    AddContactComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

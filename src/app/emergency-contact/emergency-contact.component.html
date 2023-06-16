@@ -6,6 +6,8 @@
       <th>Nom</th>
       <th>Prénom</th>
       <th>Téléphone</th>
+      <th>Action</th>
+      <!-- Add a new table column for the action buttons -->
     </tr>
   </thead>
   <tbody>
@@ -13,6 +15,10 @@
       <td>{{ contact.nom }}</td>
       <td>{{ contact.prenom }}</td>
       <td>{{ contact.telephone }}</td>
+      <td>
+        <button (click)="deleteContact(contact)">Supprimer</button>
+      </td>
+      <!-- Add the delete button inside the new table column -->
     </tr>
   </tbody>
 </table>
@@ -21,5 +27,4 @@
   <button (click)="goBack()">Retour</button>
   <button (click)="goToAddContact()">Ajouter</button>
   <button (click)="goToUpdateContact()">Modifier</button>
-  <button (click)="deleteContact()">Supprimer</button>
 </div>

@@ -1,0 +1,24 @@
+/* profile.component.css */
+
+.container {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.user-info {
+  margin-top: 10px;
+}
+
+.user-info div {
+  margin-bottom: 10px;
+}
+
+label {
+  font-weight: bold;
+}
+
+span {
+  margin-left: 10px;
+}
